@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "A4uPwO9T8H52n7l51ecZzRf5qihjjM7hvk3Dwi1OQC3oVVP0VZQv3/SHNlJ1iCsbVBu4yIuw/K+QJW5bKjoFhw==",
+  "success": true,
+  "projectFilePath": "D:\\ADV .NET\\Project[VMS]\\DataAccessLayerGeneralUser\\DataAccessLayerGeneralUser.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

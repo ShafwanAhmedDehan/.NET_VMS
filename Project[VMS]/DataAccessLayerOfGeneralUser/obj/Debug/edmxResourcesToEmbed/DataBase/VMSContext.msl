@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VMSSystemModelStoreContainer" CdmEntityContainer="VMSSystemEntities1">
+    <EntitySetMapping Name="UserVMS">
+      <EntityTypeMapping TypeName="VMSSystemModel.UserVM">
+        <MappingFragment StoreEntitySet="UserVMS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emailphn" ColumnName="emailphn" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="nid" ColumnName="nid" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="VMSSystemModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

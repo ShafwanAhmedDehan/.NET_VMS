@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="359c1a87577449be89f9a47c3ce6127c" Name="Diagram1">
+        <EntityTypeShape EntityType="VMSSystemModel.UserVM" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VMSSystemModel.Vehicle" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="VMSSystemModel.FK_Vehicle_UserVMS1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VMSSystemModel.DriverLicense" Width="1.5" PointX="3" PointY="4.5" />
+        <AssociationConnector Association="VMSSystemModel.FK_DriverLicense_UserVMS" />
+        <EntityTypeShape EntityType="VMSSystemModel.SOSinfo" Width="1.5" PointX="7.625" PointY="2.5" />
+        <AssociationConnector Association="VMSSystemModel.FK_SOSinfo_UserVMS" />
+        <EntityTypeShape EntityType="VMSSystemModel.AccessToken" Width="1.5" PointX="3" PointY="7.625" />
+        <AssociationConnector Association="VMSSystemModel.FK_AccessToken_UserVMS" />
+        <EntityTypeShape EntityType="VMSSystemModel.NotePad" Width="1.5" PointX="3" PointY="11" />
+        <AssociationConnector Association="VMSSystemModel.FK_NotePad_UserVMS" />
+        <EntityTypeShape EntityType="VMSSystemModel.HiringInfo" Width="1.5" PointX="3" PointY="14" />
+        <AssociationConnector Association="VMSSystemModel.FK_HiringInfo_UserVMS1" />
+        <EntityTypeShape EntityType="VMSSystemModel.Notification" Width="1.5" PointX="3" PointY="17.125" />
+        <AssociationConnector Association="VMSSystemModel.FK_Notification_UserVMS" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

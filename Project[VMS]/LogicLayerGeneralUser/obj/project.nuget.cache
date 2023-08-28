@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "gz2maLO3S4ceTHJsTTQB17iiHk9YB3U6r9AjsMml3MyW9jNhpwv2SCbFhWa1YTFeuAtUwHK9gBAlFn38cU2VWQ==",
+  "success": true,
+  "projectFilePath": "D:\\ADV .NET\\Project[VMS]\\LogicLayerGeneralUser\\LogicLayerGeneralUser.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

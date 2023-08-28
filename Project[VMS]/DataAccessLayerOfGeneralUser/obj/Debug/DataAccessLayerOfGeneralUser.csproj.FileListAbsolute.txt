@@ -1,0 +1,12 @@
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\bin\Debug\DataAccessLayerOfGeneralUser.dll.config
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\bin\Debug\DataAccessLayerOfGeneralUser.dll
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\bin\Debug\DataAccessLayerOfGeneralUser.pdb
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\bin\Debug\EntityFramework.dll
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\bin\Debug\EntityFramework.SqlServer.dll
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\bin\Debug\EntityFramework.xml
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\bin\Debug\EntityFramework.SqlServer.xml
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\obj\Debug\DataAccessLayerOfGeneralUser.csproj.AssemblyReference.cache
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\obj\Debug\DataAccessLayerOfGeneralUser.csproj.CoreCompileInputs.cache
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\obj\Debug\DataAccessLayerOfGeneralUser.csproj.CopyComplete
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\obj\Debug\DataAccessLayerOfGeneralUser.dll
+D:\ADV .NET\Project[VMS]\DataAccessLayerOfGeneralUser\obj\Debug\DataAccessLayerOfGeneralUser.pdb

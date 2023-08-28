@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VMSSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccessToken">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TokenValue" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="ExpireTime" Type="datetime" Nullable="false" />
+          <Property Name="UID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DriverLicense">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicenseID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Issue" Type="date" Nullable="false" />
+          <Property Name="Expire" Type="date" Nullable="false" />
+          <Property Name="UID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HiringInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="MonthlySalary" Type="int" Nullable="false" />
+          <Property Name="DailySalary" Type="int" Nullable="false" />
+          <Property Name="UID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotePad">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="UID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Notification" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SOSinfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SOScontact" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserVMS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emailphn" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="nid" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="usertype" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OwnerID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AccessToken_UserVMS">
+          <End Role="UserVMS" Type="Self.UserVMS" Multiplicity="1" />
+          <End Role="AccessToken" Type="Self.AccessToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AccessToken">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DriverLicense_UserVMS">
+          <End Role="UserVMS" Type="Self.UserVMS" Multiplicity="1" />
+          <End Role="DriverLicense" Type="Self.DriverLicense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DriverLicense">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HiringInfo_UserVMS1">
+          <End Role="UserVMS" Type="Self.UserVMS" Multiplicity="1" />
+          <End Role="HiringInfo" Type="Self.HiringInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HiringInfo">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotePad_UserVMS">
+          <End Role="UserVMS" Type="Self.UserVMS" Multiplicity="1" />
+          <End Role="NotePad" Type="Self.NotePad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NotePad">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notification_UserVMS">
+          <End Role="UserVMS" Type="Self.UserVMS" Multiplicity="1" />
+          <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Notification">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOSinfo_UserVMS">
+          <End Role="UserVMS" Type="Self.UserVMS" Multiplicity="1" />
+          <End Role="SOSinfo" Type="Self.SOSinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SOSinfo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_UserVMS1">
+          <End Role="UserVMS" Type="Self.UserVMS" Multiplicity="1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="OwnerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VMSSystemModelStoreContainer">
+          <EntitySet Name="AccessToken" EntityType="Self.AccessToken" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DriverLicense" EntityType="Self.DriverLicense" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HiringInfo" EntityType="Self.HiringInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotePad" EntityType="Self.NotePad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOSinfo" EntityType="Self.SOSinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserVMS" EntityType="Self.UserVMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AccessToken_UserVMS" Association="Self.FK_AccessToken_UserVMS">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="AccessToken" EntitySet="AccessToken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DriverLicense_UserVMS" Association="Self.FK_DriverLicense_UserVMS">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="DriverLicense" EntitySet="DriverLicense" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HiringInfo_UserVMS1" Association="Self.FK_HiringInfo_UserVMS1">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="HiringInfo" EntitySet="HiringInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotePad_UserVMS" Association="Self.FK_NotePad_UserVMS">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="NotePad" EntitySet="NotePad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notification_UserVMS" Association="Self.FK_Notification_UserVMS">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="Notification" EntitySet="Notification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOSinfo_UserVMS" Association="Self.FK_SOSinfo_UserVMS">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="SOSinfo" EntitySet="SOSinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_UserVMS1" Association="Self.FK_Vehicle_UserVMS1">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VMSSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="UserVM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emailphn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nid" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usertype" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Vehicles" Relationship="Self.FK_Vehicle_UserVMS1" FromRole="UserVMS" ToRole="Vehicle" />
+          <NavigationProperty Name="DriverLicenses" Relationship="VMSSystemModel.FK_DriverLicense_UserVMS" FromRole="UserVM" ToRole="DriverLicense" />
+          <NavigationProperty Name="SOSinfoes" Relationship="VMSSystemModel.FK_SOSinfo_UserVMS" FromRole="UserVM" ToRole="SOSinfo" />
+          <NavigationProperty Name="AccessTokens" Relationship="VMSSystemModel.FK_AccessToken_UserVMS" FromRole="UserVM" ToRole="AccessToken" />
+          <NavigationProperty Name="NotePads" Relationship="VMSSystemModel.FK_NotePad_UserVMS" FromRole="UserVM" ToRole="NotePad" />
+          <NavigationProperty Name="HiringInfo" Relationship="VMSSystemModel.FK_HiringInfo_UserVMS1" FromRole="UserVM" ToRole="HiringInfo" />
+          <NavigationProperty Name="Notifications" Relationship="VMSSystemModel.FK_Notification_UserVMS" FromRole="UserVM" ToRole="Notification" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VehicleNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OwnerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserVM" Relationship="Self.FK_Vehicle_UserVMS1" FromRole="Vehicle" ToRole="UserVMS" />
+        </EntityType>
+        <Association Name="FK_Vehicle_UserVMS1">
+          <End Role="UserVMS" Type="Self.UserVM" Multiplicity="1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVMS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="OwnerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VMSSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserVMS" EntityType="Self.UserVM" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+          <AssociationSet Name="FK_Vehicle_UserVMS1" Association="Self.FK_Vehicle_UserVMS1">
+            <End Role="UserVMS" EntitySet="UserVMS" />
+            <End Role="Vehicle" EntitySet="Vehicles" />
+          </AssociationSet>
+          <EntitySet Name="DriverLicenses" EntityType="VMSSystemModel.DriverLicense" />
+          <AssociationSet Name="FK_DriverLicense_UserVMS" Association="VMSSystemModel.FK_DriverLicense_UserVMS">
+            <End Role="UserVM" EntitySet="UserVMS" />
+            <End Role="DriverLicense" EntitySet="DriverLicenses" />
+          </AssociationSet>
+          <EntitySet Name="SOSinfoes" EntityType="VMSSystemModel.SOSinfo" />
+          <AssociationSet Name="FK_SOSinfo_UserVMS" Association="VMSSystemModel.FK_SOSinfo_UserVMS">
+            <End Role="UserVM" EntitySet="UserVMS" />
+            <End Role="SOSinfo" EntitySet="SOSinfoes" />
+          </AssociationSet>
+          <EntitySet Name="AccessTokens" EntityType="VMSSystemModel.AccessToken" />
+          <AssociationSet Name="FK_AccessToken_UserVMS" Association="VMSSystemModel.FK_AccessToken_UserVMS">
+            <End Role="UserVM" EntitySet="UserVMS" />
+            <End Role="AccessToken" EntitySet="AccessTokens" />
+          </AssociationSet>
+          <EntitySet Name="NotePads" EntityType="VMSSystemModel.NotePad" />
+          <AssociationSet Name="FK_NotePad_UserVMS" Association="VMSSystemModel.FK_NotePad_UserVMS">
+            <End Role="UserVM" EntitySet="UserVMS" />
+            <End Role="NotePad" EntitySet="NotePads" />
+          </AssociationSet>
+          <EntitySet Name="HiringInfoes" EntityType="VMSSystemModel.HiringInfo" />
+          <AssociationSet Name="FK_HiringInfo_UserVMS1" Association="VMSSystemModel.FK_HiringInfo_UserVMS1">
+            <End Role="UserVM" EntitySet="UserVMS" />
+            <End Role="HiringInfo" EntitySet="HiringInfoes" />
+          </AssociationSet>
+          <EntitySet Name="Notifications" EntityType="VMSSystemModel.Notification" />
+          <AssociationSet Name="FK_Notification_UserVMS" Association="VMSSystemModel.FK_Notification_UserVMS">
+            <End Role="UserVM" EntitySet="UserVMS" />
+            <End Role="Notification" EntitySet="Notifications" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DriverLicense">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicenseID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Issue" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Expire" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserVM" Relationship="VMSSystemModel.FK_DriverLicense_UserVMS" FromRole="DriverLicense" ToRole="UserVM" />
+        </EntityType>
+        <Association Name="FK_DriverLicense_UserVMS">
+          <End Type="VMSSystemModel.UserVM" Role="UserVM" Multiplicity="1" />
+          <End Type="VMSSystemModel.DriverLicense" Role="DriverLicense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DriverLicense">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SOSinfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOScontact" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserVM" Relationship="VMSSystemModel.FK_SOSinfo_UserVMS" FromRole="SOSinfo" ToRole="UserVM" />
+        </EntityType>
+        <Association Name="FK_SOSinfo_UserVMS">
+          <End Type="VMSSystemModel.UserVM" Role="UserVM" Multiplicity="1" />
+          <End Type="VMSSystemModel.SOSinfo" Role="SOSinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SOSinfo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AccessToken">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TokenValue" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserVM" Relationship="VMSSystemModel.FK_AccessToken_UserVMS" FromRole="AccessToken" ToRole="UserVM" />
+        </EntityType>
+        <Association Name="FK_AccessToken_UserVMS">
+          <End Type="VMSSystemModel.UserVM" Role="UserVM" Multiplicity="1" />
+          <End Type="VMSSystemModel.AccessToken" Role="AccessToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AccessToken">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NotePad">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Notes" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserVM" Relationship="VMSSystemModel.FK_NotePad_UserVMS" FromRole="NotePad" ToRole="UserVM" />
+        </EntityType>
+        <Association Name="FK_NotePad_UserVMS">
+          <End Type="VMSSystemModel.UserVM" Role="UserVM" Multiplicity="1" />
+          <End Type="VMSSystemModel.NotePad" Role="NotePad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NotePad">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HiringInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="MonthlySalary" Type="Int32" Nullable="false" />
+          <Property Name="DailySalary" Type="Int32" Nullable="false" />
+          <Property Name="UID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserVM" Relationship="VMSSystemModel.FK_HiringInfo_UserVMS1" FromRole="HiringInfo" ToRole="UserVM" />
+        </EntityType>
+        <Association Name="FK_HiringInfo_UserVMS1">
+          <End Type="VMSSystemModel.UserVM" Role="UserVM" Multiplicity="1" />
+          <End Type="VMSSystemModel.HiringInfo" Role="HiringInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserVM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HiringInfo">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Notification1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserVM" Relationship="VMSSystemModel.FK_Notification_UserVMS" FromRole="Notification" ToRole="UserVM" />
+        </EntityType>
+        <Association Name="FK_Notification_UserVMS">
+          <End Type="VMSSystemModel.UserVM" Role="UserVM" Multiplicity="1" />
+          <End Type="VMSSystemModel.Notification" Role="Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserVM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Notification">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VMSSystemModelStoreContainer" CdmEntityContainer="VMSSystemEntities">
+          <EntitySetMapping Name="UserVMS">
+            <EntityTypeMapping TypeName="VMSSystemModel.UserVM">
+              <MappingFragment StoreEntitySet="UserVMS">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emailphn" ColumnName="emailphn" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="nid" ColumnName="nid" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="VMSSystemModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DriverLicenses">
+            <EntityTypeMapping TypeName="VMSSystemModel.DriverLicense">
+              <MappingFragment StoreEntitySet="DriverLicense">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="Expire" ColumnName="Expire" />
+                <ScalarProperty Name="Issue" ColumnName="Issue" />
+                <ScalarProperty Name="LicenseID" ColumnName="LicenseID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOSinfoes">
+            <EntityTypeMapping TypeName="VMSSystemModel.SOSinfo">
+              <MappingFragment StoreEntitySet="SOSinfo">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SOScontact" ColumnName="SOScontact" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccessTokens">
+            <EntityTypeMapping TypeName="VMSSystemModel.AccessToken">
+              <MappingFragment StoreEntitySet="AccessToken">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="ExpireTime" ColumnName="ExpireTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TokenValue" ColumnName="TokenValue" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotePads">
+            <EntityTypeMapping TypeName="VMSSystemModel.NotePad">
+              <MappingFragment StoreEntitySet="NotePad">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HiringInfoes">
+            <EntityTypeMapping TypeName="VMSSystemModel.HiringInfo">
+              <MappingFragment StoreEntitySet="HiringInfo">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="DailySalary" ColumnName="DailySalary" />
+                <ScalarProperty Name="MonthlySalary" ColumnName="MonthlySalary" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="VMSSystemModel.Notification">
+              <MappingFragment StoreEntitySet="Notification">
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="Notification1" ColumnName="Notification" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

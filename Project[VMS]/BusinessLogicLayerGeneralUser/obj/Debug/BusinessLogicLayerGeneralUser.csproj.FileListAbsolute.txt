@@ -1,0 +1,14 @@
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\BusinessLogicLayerGeneralUser.dll
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\BusinessLogicLayerGeneralUser.pdb
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\AutoMapper.dll
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\DataAccessLayerOfGeneralUser.dll
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\EntityFramework.dll
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\DataAccessLayerOfGeneralUser.pdb
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\DataAccessLayerOfGeneralUser.dll.config
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\AutoMapper.xml
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\bin\Debug\EntityFramework.xml
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\obj\Debug\BusinessLogicLayerGeneralUser.csproj.AssemblyReference.cache
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\obj\Debug\BusinessLogicLayerGeneralUser.csproj.CoreCompileInputs.cache
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\obj\Debug\BusinessLogicLayerGeneralUser.csproj.CopyComplete
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\obj\Debug\BusinessLogicLayerGeneralUser.dll
+D:\ADV .NET\Project[VMS]\BusinessLogicLayerGeneralUser\obj\Debug\BusinessLogicLayerGeneralUser.pdb

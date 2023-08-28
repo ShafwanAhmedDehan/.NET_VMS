@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VMSSystemModelStoreContainer" CdmEntityContainer="VMSSystemEntities">
+    <EntitySetMapping Name="UserVMS">
+      <EntityTypeMapping TypeName="VMSSystemModel.UserVM">
+        <MappingFragment StoreEntitySet="UserVMS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emailphn" ColumnName="emailphn" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="nid" ColumnName="nid" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="VMSSystemModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverLicenses">
+      <EntityTypeMapping TypeName="VMSSystemModel.DriverLicense">
+        <MappingFragment StoreEntitySet="DriverLicense">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Expire" ColumnName="Expire" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="LicenseID" ColumnName="LicenseID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOSinfoes">
+      <EntityTypeMapping TypeName="VMSSystemModel.SOSinfo">
+        <MappingFragment StoreEntitySet="SOSinfo">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SOScontact" ColumnName="SOScontact" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccessTokens">
+      <EntityTypeMapping TypeName="VMSSystemModel.AccessToken">
+        <MappingFragment StoreEntitySet="AccessToken">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="ExpireTime" ColumnName="ExpireTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TokenValue" ColumnName="TokenValue" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotePads">
+      <EntityTypeMapping TypeName="VMSSystemModel.NotePad">
+        <MappingFragment StoreEntitySet="NotePad">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HiringInfoes">
+      <EntityTypeMapping TypeName="VMSSystemModel.HiringInfo">
+        <MappingFragment StoreEntitySet="HiringInfo">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="DailySalary" ColumnName="DailySalary" />
+          <ScalarProperty Name="MonthlySalary" ColumnName="MonthlySalary" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="VMSSystemModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Notification1" ColumnName="Notification" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
